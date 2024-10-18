@@ -21,4 +21,6 @@ custom_executable(talker)
 
 custom_executable(listener)
 
+custom_executable(talker_listener_composition)
+
 ament_package()
