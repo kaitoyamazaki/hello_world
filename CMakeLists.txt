@@ -9,18 +9,18 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(hello_world_msgs REQUIRED)
 
 function(custom_executable target)
   add_executable(${target} src/${target}.cpp)
   ament_target_dependencies(${target} rclcpp)
-  ament_target_dependencies(${target} std_msgs)
+  ament_target_dependencies(${target} hello_world_msgs)
   install(TARGETS ${target} DESTINATION lib/${PROJECT_NAME})
 endfunction()
 
 custom_executable(talker)
-
 custom_executable(listener)
-
 custom_executable(talker_listener_composition)
+custom_executable(talker_with_service)
 
 ament_package()
